@@ -40,7 +40,7 @@ export default function ChatInput({ handleSendMsg }) {
           onChange={(e) => setMsg(e.target.value)}
           value={msg}
         />
-        <button type="submit">
+        <button className="submit">
           <IoMdSend />
         </button>
       </form>
@@ -107,7 +107,6 @@ const Container = styled.div`
     background-color: #ffffff34;
     input {
       width: 90%;
-      height: 60%;
       background-color: transparent;
       color: white;
       border: none;

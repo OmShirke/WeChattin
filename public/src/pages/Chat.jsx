@@ -57,7 +57,7 @@ export default function Chat() {
               curentUser={currentUser}
             />
           ) : (
-            <ChatContainer currentUser={currentChat} />
+            <ChatContainer currentUser={currentUser} currentChat={currentChat} />
           )}
         </div>
       </Container>
