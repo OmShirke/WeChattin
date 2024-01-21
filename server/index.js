@@ -33,7 +33,7 @@ const server = app.listen(process.env.PORT || 5000, () => {
 const io = socket(server, {
   cors: {
     origin: "http://localhost:3000",
-    Credentials: true,
+    credentials: true,
   },
 });
 
@@ -46,5 +46,8 @@ io.on("connection", (socket) => {
   });
   socket.on("send-msg", (data) => {
     const sendUserSocket = onlineUsers.get(data.to);
+    if (sendUserSocket) {
+      socket.to(sendUserSocket).emit("msg-recieved", data.message);
+    }
   });
 });
