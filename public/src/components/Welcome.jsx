@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import Robot from "../assets/robot.gif";
 
 
-export default function Welcome({ currentUser }) {
-    return (
-        <Container>
-            <img src={Robot} alt="" />
-            <h1>
-                Welcome, <span>{currentUser.userName}!</span>
-            </h1>
-            <h3>Please select a chat to Start messaging.</h3>
-        </Container>
-    );
+export default function Welcome({ setCurrentUserName }) {
+  return (
+    <Container>
+      <img src={Robot} alt="Robot" />
+      <h1>
+        Welcome, <span>{setCurrentUserName}!</span>
+      </h1>
+      <h3>Please select a chat to Start messaging.</h3>
+    </Container>
+  );
 }
 
 const Container = styled.div`

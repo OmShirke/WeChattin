@@ -11,9 +11,9 @@ export default function ChatContainer({ currentChat, currentUser, socket }) {
   const [messages, setMessages] = useState([]);
   const [arrivalMessage, setArrivalMessage] = useState(null);
   const scrollRef = useRef();
-  useEffect(async () => {
+  useEffect(() => {
     if (currentChat) {
-      const response = await axios.post(getAllMessagesRoute, {
+      const response = axios.post(getAllMessagesRoute, {
         from: currentUser._id,
         to: currentChat._id,
       });
